@@ -140,7 +140,6 @@ body {
 }
 .container {
   max-width: 88rem;
-  border: 1px solid red;
   font-size: 1.6rem;
   background-color: #cccccc;
   font-family: Arial, Helvetica, sans-serif;
@@ -175,10 +174,18 @@ body img {
   padding: 1rem;
 }
 .work-body .title-body h2 {
+  width: 40%;
+  border-top: 2rem solid rgba(121, 121, 121, 0.671);
+  border-bottom: 2rem solid rgba(121, 121, 121, 0.671);
   display: flex;
   justify-content: center;
   align-items: inherit;
   font-size: 2.5rem;
+  margin: 0 auto;
+}
+.work-body .title-body p {
+  width: 90%;
+  margin: 0 auto 3rem;
 }
 .work-body h4 {
   font-size: 2rem;
@@ -186,4 +193,44 @@ body img {
 .work-body p {
   text-indent: 4rem;
   margin-bottom: 4rem;
+}
+.all-work {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+  flex-flow: row wrap;
+}
+.all-work .job {
+  height: 34rem;
+  padding: 2rem;
+  width: 45%;
+  margin-bottom: 2rem;
+}
+.all-work .job h4 {
+  text-align: center;
+}
+.all-work .job1 {
+  background-color: aqua;
+  border: 0.5rem solid black;
+}
+.all-work .job2 {
+  background-color: brown;
+  border: 0.5rem solid black;
+}
+.all-work .job3 {
+  background-color: lightgreen;
+  border: 0.5rem solid black;
+}
+.all-work .job4 {
+  background-color: orange;
+  border: 0.5rem solid black;
+}
+footer nav {
+  display: flex;
+  justify-content: space-between;
+  align-items: null;
+}
+footer nav a {
+  text-decoration: none;
+  color: black;
 }

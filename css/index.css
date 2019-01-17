@@ -207,11 +207,11 @@ body img {
 .all-work {
   display: flex;
   justify-content: space-around;
-  align-items: center;
+  align-items: flex-start;
   flex-flow: row wrap;
 }
 .all-work .job {
-  height: 37rem;
+  
   padding: 2rem;
   width: 45%;
   margin-bottom: 2rem;
@@ -323,11 +323,10 @@ footer nav a:hover {
   .all-work {
     display: flex;
     justify-content: space-around;
-    align-items: center;
+    align-items: flex-start;
     flex-flow: row wrap;
   }
   .all-work .job {
-    height: 50rem;
     padding: 2rem;
     width: 45%;
     margin-bottom: 2rem;

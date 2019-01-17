@@ -86,29 +86,32 @@ html, body {
 //General/ pre content ^  (ALL PAGE CONTENT)!!!!!!!!!!!!!
 
 
-
+// Nav bar
 header {
 	.custom-flex(space-between, center);
+	// top title
 	h1{
 		font-size:4rem;
 		padding:1rem 3rem;
 	}
+	// anchor tags
 	a{
 		padding:4rem 3rem;
 		font-size: 2rem;
 		text-decoration: none;
 		color:black;
 	}
+	// anchor tags - hover
 	a:hover{
 		color: aqua;
 		background-color:black;
 		border-radius: 1rem;
 	}
 }
-
+// General (Paragraphs / img)
 body{
 	.custom-flex(center,inherit);
-	
+	// Title image
 	img{
 		width:100%;
 		height: 30rem;
@@ -117,9 +120,10 @@ body{
 		border-radius:1rem;
 }
 }
+// All Paragraphs
 .work-body{
 	padding: 1rem;
-	
+	// top 3 titles
 	.title-body{
 		h2,h3{
 			width:50%;
@@ -146,11 +150,12 @@ body{
 		margin-bottom: 4rem;
 	}
 }
+// work Experience 
 .all-work{
-	.custom-flex(space-around, center);
+	.custom-flex(space-around, flex-start);
 	flex-flow: row wrap;
+	// boxes
 	.job{
-		height:37rem;
 		padding:2rem;
 		width:45%;
 		margin-bottom:2rem;
@@ -175,6 +180,7 @@ body{
 		.custom-border;
 	}
 }
+//footer nav
 footer{
 	nav{
 		.custom-flex(space-between, null);
@@ -259,12 +265,10 @@ footer{
 		}
 	}
 	.all-work{
-		.custom-flex(space-around, center);
+		.custom-flex(space-around, flex-start);
 		flex-flow: row wrap;
 
-
 		.job{
-			height:50rem;
 			padding:2rem;
 			width:45%;
 			margin-bottom:2rem;

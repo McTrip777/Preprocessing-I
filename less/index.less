@@ -1,10 +1,10 @@
 // Is this working?
 /* http://meyerweb.com/eric/tools/css/reset/ 
-   v2.0 | 20110126
-   License: none (public domain)
+v2.0 | 20110126
+License: none (public domain)
 */
 
-html, body, div, span, applet, object, iframe,
+html,body,div, span, applet, object, iframe,
 h1, h2, h3, h4, h5, h6, p, blockquote, pre,
 a, abbr, acronym, address, big, cite, code,
 del, dfn, em, img, ins, kbd, q, s, samp,
@@ -19,7 +19,7 @@ menu, nav, output, ruby, section, summary,
 time, mark, audio, video {
 	margin: 0;
 	padding: 0;
-	border: 0;
+	border: 20px;
 	font-size: 100%;
 	font: inherit;
 	vertical-align: baseline;
@@ -30,7 +30,7 @@ footer, header, hgroup, menu, nav, section {
 	display: block;
 }
 body {
-	line-height: 1;
+	line-height: 2;
 }
 ol, ul {
 	list-style: none;
@@ -48,12 +48,271 @@ table {
 	border-spacing: 0;
 }
 
+// Starting content ^
+
+// Mixins v
+
+.custom-flex(@justify, @align){
+	display:flex;
+	justify-content: @justify;
+	align-items: @align;
+}
+.custom-border(){
+	border: 0.5rem solid black;
+}
+//Mixins ^
+
+//general/pre content v
 /* Set every element's box-sizing to border-box */
 * {
     box-sizing: border-box;
 }
-
-html, body {
-    height: 100%;
+html{
+	font-size:62.5%;
 }
 
+html, body {
+	// height: 100%;
+	background-color: lightgrey;
+}
+
+.container{
+	max-width: 88rem;
+	font-size:1.6rem;
+	background-color: rgb(253, 255, 223);
+	font-family: Arial, Helvetica, sans-serif;
+	padding:2rem;
+}
+//General/ pre content ^  (ALL PAGE CONTENT)!!!!!!!!!!!!!
+
+
+// Nav bar
+header {
+	.custom-flex(space-between, center);
+	// top title
+	h1{
+		font-size:4rem;
+		padding:1rem 3rem;
+	}
+	// anchor tags
+	a{
+		padding:4rem 3rem;
+		font-size: 2rem;
+		text-decoration: none;
+		color:black;
+	}
+	// anchor tags - hover
+	a:hover{
+		color: aqua;
+		background-color:black;
+		border-radius: 1rem;
+	}
+}
+// General (Paragraphs / img)
+body{
+	.custom-flex(center,inherit);
+	// Title image
+	img{
+		width:100%;
+		height: 30rem;
+		border-top: 1rem solid black;
+		border-bottom: 1rem solid black;
+		border-radius:1rem;
+}
+}
+// All Paragraphs
+.work-body{
+	padding: 1rem;
+	// top 3 titles
+	.title-body{
+		h2,h3{
+			width:50%;
+			border-top:1rem solid aqua;
+			border-bottom:1rem solid aqua;
+			.custom-flex(center, inherit);
+			font-size: 2.5rem;
+			margin: 0 auto;
+		}
+		h3{
+			margin-bottom:2rem;
+		}
+		p{
+			width:90%;
+			margin: 1rem auto 3rem;
+		}
+	}
+	
+	h4{
+		font-size:2rem;
+	}
+	p{
+		text-indent: 4rem;
+		margin-bottom: 4rem;
+	}
+}
+// work Experience 
+.all-work{
+	.custom-flex(space-around, flex-start);
+	flex-flow: row wrap;
+	// boxes
+	.job{
+		padding:2rem;
+		width:45%;
+		margin-bottom:2rem;
+		h4{
+			text-align:center;
+		}
+	}
+	.job1{
+		background-color: rgb(129, 255, 255);
+		.custom-border;
+	}
+	.job2{
+		background-color: rgb(255, 124, 124);
+		.custom-border;
+	}
+	.job3{
+		background-color: lightgreen;
+		.custom-border;
+	}
+	.job4{
+		background-color: orange;
+		.custom-border;
+	}
+}
+//footer nav
+footer{
+	nav{
+		.custom-flex(space-between, null);
+		a{
+			text-decoration: none;
+			color:black;
+			padding:2rem 5.5rem;
+		}
+		a:hover{
+			color: aqua;
+			background-color:black;
+		}
+	}
+}
+
+@media(max-width:50rem){
+	.container{
+		max-width: 50rem;
+		font-size:1.6rem;
+		background-color: rgb(253, 255, 223);
+		font-family: Arial, Helvetica, sans-serif;
+	}
+	header {
+		.custom-flex(space-between, center);
+		flex-direction: column;
+		h1{
+			font-size:4rem;
+			padding:1rem;
+		}
+		a{
+			padding:2rem 2rem;
+			font-size: 2rem;
+			text-decoration: none;
+			color:black;
+		}
+		a:hover{
+			color: aqua;
+			background-color:black;
+		}
+	}
+	
+	body{
+		.custom-flex(center,inherit);
+		
+		img{
+			width:100%;
+			height: 30rem;
+			border-top: 1rem solid black;
+			border-bottom: 1rem solid black;
+			border-radius:1rem;
+	}
+	}
+	.work-body{
+		.title-body{
+			h2,h3{
+				width:50%;
+				border-top:1rem solid aqua;
+				border-bottom:1rem solid aqua;
+				.custom-flex(center, inherit);
+				font-size: 2.5rem;
+				margin: 0 auto;
+				text-align:center;
+				line-height: 3rem;
+			}
+			h3{
+				margin-bottom:2rem;
+			}
+			p{
+				width:90%;
+				margin: 0 auto 3rem;
+			}
+		}
+		padding: 1rem;
+		h4{
+			font-size:1.7rem;
+			line-height: 1.25;
+		}
+		p{
+			font-size: 1.3rem;
+			text-indent: 2rem;
+			margin-bottom: 4rem;
+		}
+	}
+	.all-work{
+		.custom-flex(space-around, flex-start);
+		flex-flow: row wrap;
+
+		.job{
+			padding:2rem;
+			width:45%;
+			margin-bottom:2rem;
+			flex-wrap: wrap;
+			h4{
+				text-align:center;
+			}
+		}
+		.job1{
+			background-color: rgb(129, 255, 255);
+			.custom-border;
+		}
+		.job2{
+			background-color: rgb(255, 124, 124);
+			.custom-border;
+		}
+		.job3{
+			background-color: lightgreen;
+			.custom-border;
+		}
+		.job4{
+			background-color: orange;
+			.custom-border;
+		}
+	}
+	footer{
+		nav{
+			.custom-flex(space-between, null);
+			a{
+				text-decoration: none;
+				color:black;
+				width:20%;
+				padding:2rem 2rem;
+				text-align:center;
+			}
+			a:hover{
+				color: aqua;
+				background-color:black;
+				border-radius: 1rem;
+
+			}
+		}
+	}
+}
+
+
+// Contacts page	---------------------------------------
